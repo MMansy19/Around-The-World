@@ -11,7 +11,7 @@ const Country = () => {
       {isError && <ShowMessage message="Something went wrong!" />}
       {isLoading && <ShowMessage message="Loading countries data...!" />}
       {!isError && !isLoading && (
-        <div className="">
+        <div>
           <Link
             className="mb-16 inline-block rounded-md bg-white p-3 md:mb-20"
             to="/"
@@ -64,7 +64,7 @@ const Country = () => {
                   </p>
 
                   <p>
-                    <span className="font-semibold">Capital: </span>
+                    <span className="font-semibold  ">Capital: </span>
                     <span>{result?.capital}</span>
                   </p>
                 </div>

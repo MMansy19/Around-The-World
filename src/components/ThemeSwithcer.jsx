@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const activeCircleStyles = "flex items-center justify-center w-5 h-5 rounded-full";
+const activeCircleStyles =
+  "flex items-center justify-center w-5 h-5 rounded-full";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState("light");
@@ -25,7 +26,7 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <div className="flex w-14 h-8 items-center justify-around  rounded-full bg-[#2e2f33] dark:bg-black">
+    <div className="flex h-8 w-14 items-center justify-around  rounded-full bg-[#2e2f33] dark:bg-black">
       <button
         className={`${activeCircleStyles} ${theme === "light" ? "bg-white" : ""}`}
         onClick={() => toggleTheme("light")}

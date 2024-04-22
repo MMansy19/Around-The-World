@@ -1,9 +1,10 @@
 const EmptySearch = () => {
   return (
-    <div className="col-span-4 mt-6 flex flex-col items-center text-center">
+    <div className="col-span-4 flex flex-col items-center text-center">
       <svg
+        className="w-64 lg:h-96 lg:w-80"
         width="416"
-        height="344"
+        height="300"
         viewBox="0 0 416 344"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +77,7 @@ const EmptySearch = () => {
       </svg>
 
       <h2 className="text-4xl">No results found</h2>
-      <p className="font-light">
+      <p className="mt-5 font-light">
         We can’t find the country you searched for... Try to search for another
         one
       </p>
