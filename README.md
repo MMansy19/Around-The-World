@@ -6,6 +6,25 @@ Around The World is a React project that displays information cards for various 
 
 ## [Live Link🌟](https://around-the-world-mansy.vercel.app/)
 
+## Screenshots
+
+### Flow Chart 
+  <img  src="design/Flow Chart.png" alt="Flow Chart">
+
+### Home
+<div style="display: flex; justify-content: center; flex-direction:row; ">
+  <img style="width: 500px;  margin: 0 10px;" src="design/1.png" alt="header">
+  <img style="width: 500px;  margin: 0 10px;" src="design/3.png" alt="header">
+</div>
+
+### Regions and Countries
+<div style="display: flex; justify-content: center; flex-direction:row ;">
+  <img style="width: 500px;  margin: 0 10px;" src="design/4.png" alt="pages">
+  <img style="width: 500px;  margin: 0 10px;" src="design/5.png" alt="pages">
+</div>
+### Dark Mode
+  <img src="design/2.png" alt="pages">
+
 ## Features
 
 - Display cards containing information about different countries.
@@ -23,35 +42,6 @@ Around The World is a React project that displays information cards for various 
 - MUI
 - RESTful API
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/MMansy19/Around-The-World.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd Around-The-World
-```
-
-3. Install dependencies:
-
-```bash
-npm install
-```
-
-4. Start the development server:
-
-```bash
-npm start
-```
-
-5. Open your browser and navigate to `http://localhost:3000` to view the application.
 
 ## API Used
 
@@ -64,3 +54,11 @@ Contributions are welcome! Feel free to open issues or submit pull requests to s
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## Contact
+
+- [Author](https://github.com/MMansy19)
+- [Website](https://mahmoud-mansy-portfolio.netlify.app/)
+- [Email](mailto:mahmoud2abdalfattah@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/mahmoud-mansy-a189a5232)
