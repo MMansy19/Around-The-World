@@ -1,23 +1,28 @@
-  const SearchInput = ({ countriesList, filterCountriesList }) => {
-    const handleSearch = (e) => {
-      e.preventDefault();
-      let searchTerm = e.target.elements.search.value.toLowerCase();
-  
-      // Replace any substring of "israel" with "palestine"
-      const israelRegex = /i?s?r?a?e?l?/gi; // Matches any substring of "Israel"
-      if (searchTerm.match(israelRegex)) {
-        searchTerm = searchTerm.replace(israelRegex, "palestine");
-      }
-  
-      const filteredCountries =
-        !searchTerm || searchTerm === ""
-          ? countriesList
-          : countriesList.filter((country) =>
-              country.name.toLowerCase().includes(searchTerm)
-            );
-  
-      filterCountriesList(filteredCountries);
-    };
+
+const SearchInput = ({ countriesList, filterCountriesList }) => {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    let searchTerm = e.target.elements.search.value.toLowerCase();
+
+    // Replace any variation of "israel" with "palestine"
+    const israelPatterns = [
+      'israel', 'isreal', 'izrael', 'israe', 'isra', 
+      'srael', 'sreal', 'zrael', 'srae'
+    ];
+    
+    if (israelPatterns.some(pattern => searchTerm.includes(pattern))) {
+      searchTerm = 'palestine';
+    }
+
+    const filteredCountries =
+      !searchTerm || searchTerm === ""
+        ? countriesList
+        : countriesList.filter((country) =>
+            country.name.common.toLowerCase().includes(searchTerm)
+          );
+
+    filterCountriesList(filteredCountries);
+  };
 
   return (
     <form className="relative flex-1" onSubmit={handleSearch}>
