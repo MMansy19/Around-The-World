@@ -1,7 +1,11 @@
 const SearchInput = ({ countriesList, filterCountriesList }) => {
   const handleSearch = (e) => {
     e.preventDefault();
-    const searchTerm = e.target.elements.search.value;
+    let searchTerm = e.target.elements.search.value;
+    if (searchTerm.toLowerCase() === "israel") {
+      // to handel when isreal is searched
+      searchTerm = "palestine";
+    }
     const filteredCountries =
       !searchTerm || searchTerm === ""
         ? countriesList
