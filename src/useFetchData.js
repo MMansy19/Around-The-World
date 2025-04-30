@@ -14,6 +14,26 @@ export const useFetchData = (country) => {
     }
   }, []);
 
+  const processCountriesData = (data) => {
+    // Filter out Israel from the countries list
+    const filteredData = Array.isArray(data) 
+      ? data.filter(item => 
+          item.name && 
+          item.name.common.toLowerCase() !== 'israel'
+        )
+      : data;
+
+    if (country) {
+      // Country page
+      setResult(Array.isArray(filteredData) ? filteredData[0] : filteredData);
+    } else {
+      // Homepage
+      setResult(filteredData);
+      setFilteredCountries(filteredData);
+      localStorage.setItem("countries", JSON.stringify(filteredData));
+    }
+  };
+
   const fetchDataFromAPI = () => {
     let url = "https://restcountries.com/v3.1/all";
 
@@ -25,17 +45,7 @@ export const useFetchData = (country) => {
 
     fetch(url)
       .then((response) => response.json())
-      .then((data) => {
-        if (country) {
-          //Country page
-          setResult(data[0]);
-        } else {
-          //Homepage
-          setResult(data);
-          setFilteredCountries(data);
-          localStorage.setItem("countries", JSON.stringify(data));
-        }
-      })
+      .then(processCountriesData)
       .catch(() => setIsError(true))
       .finally(() => setIsLoading(false));
   };
@@ -44,8 +54,7 @@ export const useFetchData = (country) => {
     const data = JSON.parse(localStorage.getItem("countries"));
 
     if (data) {
-      setResult(data);
-      setFilteredCountries(data);
+      processCountriesData(data);
     } else {
       fetchDataFromAPI();
     }
