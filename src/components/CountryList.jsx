@@ -8,7 +8,7 @@ const CountryList = ({ data }) => {
         data.map((country) => (
           <CountryCard
             key={country.name.official}
-            name={country.name.comon}
+            name={country.name.common}
             population={country.population}
             region={country.region}
             capital={country.capital}
